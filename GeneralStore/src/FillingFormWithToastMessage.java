@@ -3,13 +3,13 @@ import java.net.MalformedURLException;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
-public class FillingForm extends DesiredCapabilitiesClass {
-
+public class FillingFormWithToastMessage extends DesiredCapabilitiesClass{
 	public static void main(String[] args) throws MalformedURLException {
 		// TODO Auto-generated method stub
 		AndroidDriver<AndroidElement> driver = capabilities();
 		//driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-		driver.findElementByAndroidUIAutomator("text(\"Enter name here\")").sendKeys("ABCD");
+		//driver.findElementByAndroidUIAutomator("text(\"Enter name here\")").sendKeys("ABCD");
+		//toast is shown ony when name is blank so it has been commented
 		driver.hideKeyboard();
 		driver.findElementByAndroidUIAutomator("text(\"Female\")").click();
 		driver.findElementById("com.androidsample.generalstore:id/spinnerCountry").click();
@@ -24,6 +24,10 @@ public class FillingForm extends DesiredCapabilitiesClass {
 		driver.findElementByAndroidUIAutomator("text(\"Argentina\")").click();
 		driver.findElementByAndroidUIAutomator("text(\"Let's  Shop\")").click();
 		
+		//Validating toast message is shown or not
+		String toastmessage=driver.findElementByXPath("//android.widget.Toast[1]").getAttribute("name");
+		//We are using name attribute here because developers specify the toast message under name
+		System.out.println(toastmessage);
 		
 	}
 
