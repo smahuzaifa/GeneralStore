@@ -1,5 +1,7 @@
 import java.net.MalformedURLException;
 
+import org.testng.Assert;
+
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
@@ -27,7 +29,9 @@ public class FillingFormWithToastMessage extends DesiredCapabilitiesClass{
 		//Validating toast message is shown or not
 		String toastmessage=driver.findElementByXPath("//android.widget.Toast[1]").getAttribute("name");
 		//We are using name attribute here because developers specify the toast message under name
-		System.out.println(toastmessage);
+		//System.out.println(toastmessage);
+		Assert.assertEquals("Please enter your name", toastmessage);
+		//Assert checks if left component is equal to right component or not.
 		
 	}
 
