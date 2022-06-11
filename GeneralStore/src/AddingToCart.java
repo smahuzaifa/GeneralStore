@@ -35,7 +35,7 @@ public class AddingToCart extends DesiredCapabilitiesClass{
 				+ ".resourceId(\"com.androidsample.generalstore:id/rvProductList\"))"
 				+ ".scrollIntoView(new UiSelector().textMatches(\"Jordan 6 Rings\").instance(0))"));
 		/*
-		 * We cannot directly scroll to required prodict and select add to cart since the scroll happens
+		 * We cannot directly scroll to required product and select add to cart since the scroll happens
 		 * only till the name is found, add to cart button may be hidden. So we traverse the parent
 		 * component until the required  child component is completely visible.
 		 */
