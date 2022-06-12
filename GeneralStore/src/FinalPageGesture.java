@@ -82,7 +82,7 @@ public class FinalPageGesture extends DesiredCapabilitiesClass {
 		TouchAction t = new TouchAction(driver);
 		t.tap(tapOptions().withElement(element(checkbox))).perform();
 		WebElement tc = driver.findElementById("com.androidsample.generalstore:id/termsButton");
-		t.longPress(longPressOptions().withElement(element(tc))).perform();
+		t.longPress(longPressOptions().withElement(element(tc)).withDuration(ofSeconds(2))).release().perform();
 		//Thread.sleep(2000);
 		driver.findElementById("android:id/button1").click();
 		driver.findElementByAndroidUIAutomator("text(\"Visit to the website to complete purchase\")").click();
