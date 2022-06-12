@@ -1,6 +1,7 @@
 import java.net.MalformedURLException;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
 
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
@@ -59,6 +60,9 @@ public class AddingToCart extends DesiredCapabilitiesClass{
 		    	}
 		    }
 		driver.findElement(By.id("com.androidsample.generalstore:id/appbar_btn_cart")).click();
+		//Checking if the product added to cart and prodcut in cart is same
+		String productincart = driver.findElementById("com.androidsample.generalstore:id/productName").getText();
+		Assert.assertEquals(productincart, "Jordan 6 Rings");
 	}
 
 }
