@@ -62,6 +62,9 @@ public class AddingToCart extends DesiredCapabilitiesClass{
 		driver.findElement(By.id("com.androidsample.generalstore:id/appbar_btn_cart")).click();
 		//Checking if the product added to cart and prodcut in cart is same
 		String productincart = driver.findElementById("com.androidsample.generalstore:id/productName").getText();
+		/*
+		 * We cannot use string to compare the text as we are getting text in above statement 
+		 */
 		Assert.assertEquals(productincart, "Jordan 6 Rings");
 	}
 
