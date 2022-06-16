@@ -89,8 +89,6 @@ public class SwitchingToWebView extends DesiredCapabilitiesClass {
 		//Pressing the back button of android to go back to native app from web view
 		driver.context("NATIVE_APP");
 		//Switching back to native app
-		
-		
 	}
 
 }
