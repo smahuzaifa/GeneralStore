@@ -67,7 +67,7 @@ public class SwitchingToWebView extends DesiredCapabilitiesClass {
 		 */
 		Set<String> context = driver.getContextHandles();
 		//Set is a collection of strings
-		for(String contextName : context) //enchanced for loop
+		for(String contextName : context) //enhanced for loop
 		{
 			System.out.println(contextName);
 		}
